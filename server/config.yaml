@@ -1,0 +1,25 @@
+app:
+  name: ducker
+  version: 0.0.1
+
+switchs:
+  sync-db: false
+
+mysql:
+  ip: 120.27.146.142
+  port: 3306
+  username: root
+  password: 123456
+  database: ducker
+
+redis:
+  ip: 120.27.146.142
+  port: 6379
+  db: 0
+  password: ''
+
+jwt:
+  signing-key: 'youcannotseeme'
+  expires-time: 604800
+  buffer-time: 86400
+  issuer: 'ganwei'
