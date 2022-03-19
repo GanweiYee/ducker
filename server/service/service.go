@@ -1,9 +1,9 @@
 package service
 
-import "github.com/GanweiYee/ducker/server/service/system"
+import "github.com/GanweiYee/feuer/server/service/system"
 
-type ServiceGroup struct {
+type Group struct {
 	system.ServiceGroup
 }
 
-var ServiceApp = new(ServiceGroup)
+var App = new(Group)

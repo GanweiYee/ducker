@@ -1,7 +1,7 @@
 package system
 
 import (
-	"github.com/GanweiYee/ducker/server/router"
+	"github.com/GanweiYee/feuer/server/router"
 	"github.com/gin-gonic/gin"
 )
 
@@ -12,5 +12,5 @@ func init() {
 func userRoute(r *gin.RouterGroup) {
 	userRouter := r.Group("user")
 
-	userRouter.POST("/add", userController.Add)
+	userRouter.POST("/register", userController.Register)
 }

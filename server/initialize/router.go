@@ -1,10 +1,10 @@
 package initialize
 
 import (
-	_ "github.com/GanweiYee/ducker/server/docs"
-	"github.com/GanweiYee/ducker/server/router"
+	_ "github.com/GanweiYee/feuer/server/docs"
+	"github.com/GanweiYee/feuer/server/router"
 	// 路由引入
-	_ "github.com/GanweiYee/ducker/server/router/system"
+	_ "github.com/GanweiYee/feuer/server/router/system"
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"

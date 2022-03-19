@@ -3,7 +3,7 @@ package initialize
 import (
 	"context"
 	"fmt"
-	"github.com/GanweiYee/ducker/server/global"
+	"github.com/GanweiYee/feuer/server/global"
 	"github.com/go-redis/redis/v8"
 )
 

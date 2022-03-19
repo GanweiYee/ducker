@@ -1,8 +1,12 @@
-FROM golang:latest
+FROM golang:latest as builder
 WORKDIR /go/src/app
 ADD . /go/src/app
-RUN go env -w GO111MODULE=on
-RUN go env -w GOPROXY=https://goproxy.cn,direct
+RUN go deploy -w GO111MODULE=on
+RUN go deploy -w GOPROXY=https://goproxy.cn,direct
+RUN go env -w CGO_ENABLED=0
 RUN go mod tidy
 EXPOSE 8848
-CMD go run main.go
+CMD go build -o server .
+
+FROM alpine:latest
+

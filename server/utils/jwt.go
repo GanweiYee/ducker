@@ -2,8 +2,8 @@ package utils
 
 import (
 	"errors"
-	"github.com/GanweiYee/ducker/server/global"
-	systemmodel "github.com/GanweiYee/ducker/server/model"
+	"github.com/GanweiYee/feuer/server/global"
+	systemmodel "github.com/GanweiYee/feuer/server/model"
 	"github.com/dgrijalva/jwt-go"
 	"time"
 )

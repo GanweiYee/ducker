@@ -1,6 +1,9 @@
 package main
 
-import "github.com/GanweiYee/ducker/server/initialize"
+import (
+	"github.com/GanweiYee/feuer/server/global"
+	"github.com/GanweiYee/feuer/server/initialize"
+)
 
 //go:generate go env -w GO111MODULE=on
 //go:generate go env -w GOPROXY=https://goproxy.cn,direct
@@ -14,5 +17,5 @@ func main() {
 
 	Router := initialize.Router()
 
-	Router.Run(":8848")
+	Router.Run(":" + global.Config.System.Port)
 }

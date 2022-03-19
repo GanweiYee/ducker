@@ -2,8 +2,8 @@ package entity
 
 import (
 	"fmt"
-	"github.com/GanweiYee/ducker/server/global"
-	"github.com/GanweiYee/ducker/server/utils"
+	"github.com/GanweiYee/feuer/server/global"
+	"github.com/GanweiYee/feuer/server/utils"
 	"reflect"
 	"sync"
 	"time"

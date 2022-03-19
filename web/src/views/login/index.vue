@@ -1,54 +1,92 @@
 <template>
-  <el-card class="login-card" :body-style="{padding: '38px 30px'}">
-    <el-form ref="form" :model="form" size="large">
-      <el-form-item prop="account">
-        <el-input v-model="form.account"/>
+  <el-card
+      v-show="mode === 'login'"
+      shadow="hover"
+      class="form-card"
+  >
+    <h3>登录系统</h3>
+    <el-form>
+      <el-form-item>
+        <el-input v-model="loginForm.account"/>
       </el-form-item>
-      <el-form-item prop="password">
-        <el-input v-model="form.password"
-                  type="password"
-                  show-password
-        />
+      <el-form-item>
+        <el-input v-model="loginForm.password"/>
+      </el-form-item>
+      <el-form-item>
+        <el-button class="confirm-btn" type="primary" @click="onLogin">登录</el-button>
+      </el-form-item>
+      <el-form-item>
+        <el-button class="confirm-btn" type="primary" @click="mode = 'signup'">去注册</el-button>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="text">忘记密码</el-button>
       </el-form-item>
     </el-form>
-    <el-button type="primary" round class="login-button" @click="confirmLogin">登录</el-button>
+  </el-card>
+
+  <el-card
+      v-show="mode === 'signup'"
+      shadow="hover"
+      class="form-card"
+  >
+    <h3>注册账号</h3>
+    <el-form>
+      <el-form-item>
+        <el-input v-model="loginForm.account"/>
+      </el-form-item>
+      <el-form-item>
+        <el-input v-model="loginForm.password"/>
+      </el-form-item>
+      <el-form-item>
+        <el-button class="confirm-btn" type="primary" @click="onLogin">注册</el-button>
+      </el-form-item>
+      <el-form-item>
+        <el-button class="confirm-btn" type="primary" @click="mode = 'login'">去登录</el-button>
+      </el-form-item>
+    </el-form>
   </el-card>
 </template>
 
-<script lang="ts">
-import {login} from '@/api/system/base'
-import {defineComponent} from 'vue';
-
-export default defineComponent({
-  name: 'Login',
-  props: {
-    msg: String,
-  },
-  data() {
-    return {
-      form: {
-        account: 'admin',
-        password: '123456'
-      }
-    }
-  },
-  methods: {
-    confirmLogin() {
-      login(this.form).then((res: any) => {
-        console.log(res)
-      })
-    }
-  }
-});
+<script>
+export default {
+  name: "login"
+}
 </script>
 
-<style scoped lang="scss">
-.login-card {
-  margin: 50px auto;
-  width: 380px;
+<script setup>
+import * as baseApi from '@/api/system/base'
+import {reactive, ref} from 'vue'
 
-  .login-button {
-    width: 100%;
-  }
+const mode = ref('login')
+const loginForm = reactive({
+  account: '',
+  password: '',
+})
+
+const onLogin = () => {
+  console.log(baseApi)
+  baseApi.login(loginForm).then(res =>{
+    console.log(res)
+  })
+}
+
+const onSignup = () => {
+  baseApi.signup(loginForm).then(res =>{
+    console.log(res)
+  })
+}
+
+</script>
+
+
+<style lang="scss" scoped>
+.form-card {
+  margin: 50px auto;
+  width: 350px;
+  height: 400px;
+}
+
+.confirm-btn {
+  width: 100%;
 }
 </style>

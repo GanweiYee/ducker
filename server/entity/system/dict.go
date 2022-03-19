@@ -1,8 +1,12 @@
 package system
 
 import (
-	"github.com/GanweiYee/ducker/server/entity"
+	"github.com/GanweiYee/feuer/server/entity"
 )
+
+func init() {
+	entity.RegisterDbTable(new(Dict))
+}
 
 type Dict struct {
 	entity.Base `xorm:"extends"`
@@ -10,8 +14,4 @@ type Dict struct {
 
 func (receiver *Dict) TableName() string {
 	return entity.TableName(*receiver)
-}
-
-func init() {
-	entity.RegisterDbTable(new(Dict))
 }

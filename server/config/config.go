@@ -1,9 +1,10 @@
 package config
 
 type Config struct {
-	App     app     `json:"app" yaml:"app"`
-	Mysql   mysql   `json:"mysql" yaml:"mysql"`
-	Redis   redis   `json:"redis" yaml:"redis"`
-	Jwt     jwt     `json:"jwt" yaml:"jwt"`
-	Switchs switchs `json:"switchs" yaml:"switchs"`
+	App    app    `mapstructure:"app" json:"app" yaml:"app"`
+	Mysql  mysql  `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
+	Redis  redis  `mapstructure:"redis" json:"redis" yaml:"redis"`
+	Jwt    jwt    `mapstructure:"jwt" json:"jwt" yaml:"jwt"`
+	Onoff  onoff  `mapstructure:"on-off" json:"onoff" yaml:"on-off"`
+	System system `mapstructure:"system" json:"system" yaml:"system"`
 }

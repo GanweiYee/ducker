@@ -1,9 +1,9 @@
 package controller
 
-import "github.com/GanweiYee/ducker/server/controller/system"
+import "github.com/GanweiYee/feuer/server/controller/system"
 
-type ControllerGroup struct {
+type Group struct {
 	system.ControllerGroup
 }
 
-var ControllerApp = new(ControllerGroup)
+var App = new(Group)

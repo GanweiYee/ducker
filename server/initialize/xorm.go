@@ -2,8 +2,8 @@ package initialize
 
 import (
 	"fmt"
-	"github.com/GanweiYee/ducker/server/entity"
-	"github.com/GanweiYee/ducker/server/global"
+	"github.com/GanweiYee/feuer/server/entity"
+	"github.com/GanweiYee/feuer/server/global"
 	_ "github.com/go-sql-driver/mysql"
 	"xorm.io/xorm"
 )
@@ -30,7 +30,7 @@ func Xorm() {
 	global.DbEngine.ShowSQL(true) // 日志显示执行sql
 
 	//同步表结构
-	if global.Config.Switchs.SyncDb {
+	if global.Config.Onoff.SyncDb {
 		err = global.DbEngine.Sync2(entity.DbTables...)
 		if err != nil {
 			fmt.Printf("%v", err)

@@ -1,7 +1,7 @@
 package global
 
 import (
-	"github.com/GanweiYee/ducker/server/config"
+	"github.com/GanweiYee/feuer/server/config"
 	"github.com/go-redis/redis/v8"
 	"xorm.io/xorm"
 )

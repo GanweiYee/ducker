@@ -1,9 +1,9 @@
 package config
 
 type mysql struct {
-	Ip       string `json:"ip" yaml:"ip"`
-	Port     string `json:"port" yaml:"port"`
-	Username string `json:"username" yaml:"username"`
-	Password string `json:"password" yaml:"password"`
-	Database string `json:"database" yaml:"database"`
+	Ip       string `mapstructure:"ip" json:"ip" yaml:"ip"`
+	Port     string `mapstructure:"port" json:"port" yaml:"port"`
+	Username string `mapstructure:"username" json:"username" yaml:"username"`
+	Password string `mapstructure:"password" json:"password" yaml:"password"`
+	Database string `mapstructure:"database" json:"database" yaml:"database"`
 }

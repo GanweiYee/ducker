@@ -1,11 +1,3 @@
 module.exports = {
-  "env": {
-    "development": {
-      "sourceMaps": true,
-      "retainLines": true,
-    }
-  },
-  presets: [
-    '@vue/cli-plugin-babel/preset'
-  ]
-}
+  presets: ["@vue/cli-plugin-babel/preset"],
+};

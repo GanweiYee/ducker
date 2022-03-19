@@ -1,13 +1,13 @@
 package system
 
 import (
-	"github.com/GanweiYee/ducker/server/controller"
-	"github.com/GanweiYee/ducker/server/utils"
+	"github.com/GanweiYee/feuer/server/controller"
+	"github.com/GanweiYee/feuer/server/utils"
 )
 
 var (
-	baseController = controller.ControllerApp.BaseController
-	userController = controller.ControllerApp.UserController
+	baseController = controller.App.BaseController
+	userController = controller.App.UserController
 )
 
 func module() string {

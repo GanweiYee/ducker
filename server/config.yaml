@@ -1,20 +1,23 @@
 app:
-  name: ducker
+  name: feuer
   version: 0.0.1
 
-switchs:
-  sync-db: false
+system:
+  port: 8848
+
+on-off:
+  sync-db: true
 
 mysql:
-  ip: 120.27.146.142
-  port: 3306
+  ip: 120.25.194.74
+  port: 30306
   username: root
-  password: 123456
-  database: ducker
+  password: 123456!
+  database: feuer
 
 redis:
-  ip: 120.27.146.142
-  port: 6379
+  ip: 120.25.194.74
+  port: 31379
   db: 0
   password: ''
 

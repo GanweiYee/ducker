@@ -1,8 +1,8 @@
 package config
 
 type redis struct {
-	Ip       string `json:"ip" yaml:"ip"`
-	Port     string `json:"port" yaml:"port"`
-	DB       int    `json:"db" yaml:"db"`
-	Password string `json:"password" yaml:"password"`
+	Ip       string `mapstructure:"ip" json:"ip" yaml:"ip"`
+	Port     string `mapstructure:"port" json:"port" yaml:"port"`
+	DB       int    `mapstructure:"db" json:"db" yaml:"db"`
+	Password string `mapstructure:"password" json:"password" yaml:"password"`
 }
